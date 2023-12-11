@@ -28,23 +28,30 @@ export default function Page() {
   }
 
   return (
-    <section>
+    <section style={{ backgroundColor: "#FAEDCD", color: "#000", minHeight: "100vh", padding: "1em", display: "flex", 
+    flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
         {user ? (
           <div>
-            <p>Welcome, {user.displayName}</p>
+            <h1 style={{ textAlign: "center" }}>Welcome</h1>
             <button className="text-lg m-2 hover:underline" onClick={handleSignOut}>Sign Out</button>
             <br />
             <Link href="/main">Go to Main Page</Link>
           </div>
         ) : (
     <div>
-      <h1>Login</h1>
+      <h1 style={{ textAlign: "center" }}>Login</h1>
       <form onSubmit={handleSignIn}>
         <input type="email" onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
         <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
         <button type="submit">Sign In</button>
       </form>
-      <button onClick={gitHubSignIn}>Sign In with GitHub</button>
+      <br />
+      <br />
+      <br />
+      <button onClick={gitHubSignIn} style={{ backgroundColor: "#000", color: "#fff", padding: "10px 20px", borderRadius: "5px", margin: "10px" }}>
+  <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub logo" style={{ width: "20px", marginRight: "10px", display: "inline-block" }} />
+  Sign In with GitHub
+</button>
     </div>
     
   )}

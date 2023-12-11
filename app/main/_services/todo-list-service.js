@@ -23,4 +23,3 @@ export async function updateTodo(todoId, updatedTodo) {
   const todoDoc = doc(db, "todos", todoId);
   await updateDoc(todoDoc, updatedTodo);
 }
-

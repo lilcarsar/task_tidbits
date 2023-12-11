@@ -29,17 +29,18 @@ export default function Page() {
   }
 
   return (
-    <section>
+    <section style={{ backgroundColor: "#FAEDCD", color: "#000", minHeight: "100vh", padding: "1em", display: "flex", 
+    flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
         {user ? (
           <div>
-            <p>Welcome, {user.displayName}</p>
+            <h1 style={{ textAlign: "center" }}>Welcome</h1>
             <button className="text-lg m-2 hover:underline" onClick={handleSignOut}>Sign Out</button>
             <br />
             <Link href="/main">Go to Main Page</Link>
           </div>
         ) : (
     <div>
-      <h1>Sign Up</h1>
+      <h1 style={{ textAlign: "center" }}>Signup</h1>
       <form onSubmit={handleSignUp}>
         <input type="email" onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
         <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder="Password" />

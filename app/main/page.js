@@ -36,9 +36,11 @@ function TodoList() {
   };
 
   return (
-    <div>
+    <div style={{ backgroundColor: "#FAEDCD", color: "#000", minHeight: "100vh", padding: "1em", display: "flex", 
+    flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
       <input value={newTodo} onChange={e => setNewTodo(e.target.value)} />
-      <button onClick={handleAddTodo}>Add Todo</button>
+      <button onClick={handleAddTodo} style={{ color: "#000", textDecoration: "none", 
+      backgroundColor: "#FFF", padding: "10px 20px", borderRadius: "5px", margin: "10px" }}>Add Todo</button>
       {todos.map(todo => (
         <div key={todo.id}>
           <input type="checkbox" checked={todo.completed} onChange={() => handleToggleComplete(todo.id)} />
