@@ -4,6 +4,7 @@ import React from "react";
 import { useState } from 'react';
 import { useUserAuth } from "../_utils/auth-context";
 import Link from "next/link";
+import Heading from "./heading";
 
 export default function Page() {
   const { user, nativeSignUp, firebaseSignOut} = useUserAuth();
@@ -33,14 +34,22 @@ export default function Page() {
     flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
         {user ? (
           <div>
-            <h1 style={{ textAlign: "center" }}>Welcome</h1>
-            <button className="text-lg m-2 hover:underline" onClick={handleSignOut}>Sign Out</button>
+            <Heading title="Welcome" />
+            
             <br />
-            <Link href="/main">Go to Main Page</Link>
+            <Link href="/main" style={{ color: "#000", 
+            textDecoration: "none", backgroundColor: "#FFF", padding: "10px 20px", justifyContent: "center", 
+            borderRadius: "5px", margin: "10px" }} >Go to Main Page</Link>
+            <br />
+            <br />
+            <br />
+            <button className="text-lg m-2 hover:underline" onClick={handleSignOut} style={{ color: "#000", 
+            textDecoration: "none", backgroundColor: "#FFF", padding: "10px 20px", justifyContent: "center", 
+            borderRadius: "5px", margin: "10px" }} >Sign Out</button>
           </div>
         ) : (
     <div>
-      <h1 style={{ textAlign: "center" }}>Signup</h1>
+      <Heading title="Signup" />
       <form onSubmit={handleSignUp}>
         <input type="email" onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
         <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder="Password" />

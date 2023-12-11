@@ -1,10 +1,11 @@
 import Link from "next/link";
+import Heading from "./heading";
 
 export default function Home() {
   return (
     <main style={{ backgroundColor: "#FAEDCD", color: "#000", minHeight: "100vh",
      padding: "1em", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-      <h1 style={{ textAlign: "center" }}>Welcome to TaskTidbits</h1>
+      <Heading title="Welcome to TaskTidbits" />
       <h2>Create an Account or Login</h2>
       <Link href="../login/signup" style={{ color: "#000", textDecoration: "none", 
       backgroundColor: "#FFF", padding: "10px 20px", 
