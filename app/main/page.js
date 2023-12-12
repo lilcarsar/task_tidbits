@@ -3,6 +3,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { getTodos, addTodo, deleteTodo, updateTodo } from './_services/todo-list-service';
+import Heading from './heading';
 
 function TodoList() {
   const [todos, setTodos] = useState([]);
@@ -38,14 +39,15 @@ function TodoList() {
   return (
     <div style={{ backgroundColor: "#FAEDCD", color: "#000", minHeight: "100vh", padding: "1em", display: "flex", 
     flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+      <Heading title="Todo List" />
       <input value={newTodo} onChange={e => setNewTodo(e.target.value)} />
       <button onClick={handleAddTodo} style={{ color: "#000", textDecoration: "none", 
-      backgroundColor: "#FFF", padding: "10px 20px", borderRadius: "5px", margin: "10px" }}>Add Todo</button>
+      backgroundColor: "#FFF", padding: "10px 20px", marginLeft: '20px', borderRadius: "5px", margin: "10px" }}>Add Todo</button>
       {todos.map(todo => (
         <div key={todo.id}>
           <input type="checkbox" checked={todo.completed} onChange={() => handleToggleComplete(todo.id)} />
           {todo.text}
-          <button onClick={() => handleDeleteTodo(todo.id)}>Delete</button>
+          <button onClick={() => handleDeleteTodo(todo.id)} style={{ marginLeft: '20px' }}>Delete</button>
         </div>
       ))}
     </div>
